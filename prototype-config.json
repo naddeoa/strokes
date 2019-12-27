@@ -1,0 +1,105 @@
+{
+    "rules": [
+        {
+            "description": "Windows DE switching",
+            "manipulators": [
+                {
+                    "description": "Next desktop",
+                    "from": {
+                        "key": "l",
+                        "modifiers": [
+                            "VK_LSHIFT",
+                            "VK_LCONTROL"
+                        ]
+                    },
+                    "to": [
+                        {
+                            "key": "VK_RIGHT",
+                            "modifiers": [
+                                "VK_LCONTROL",
+                                "VK_LWIN"
+                            ],
+                            "type": "keys"
+                        }
+                    ]
+                },
+                {
+                    "description": "Previous desktop",
+                    "from": {
+                        "key": "h",
+                        "modifiers": [
+                            "VK_LSHIFT",
+                            "VK_LCONTROL"
+                        ]
+                    },
+                    "to": [
+                        {
+                            "key": "VK_LEFT",
+                            "modifiers": [
+                                "VK_LCONTROL",
+                                "VK_LWIN"
+                            ],
+                            "type": "keys"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Firefox VK_TAB switching",
+            "manipulators": [
+                {
+                    "conditions": [
+                        {
+                            "description": "firefox",
+                            "type": "focused_application"
+                        }
+                    ],
+                    "description": "tab next",
+                    "from": {
+                        "key": "l",
+                        "modifiers": [
+                            "VK_LALT",
+                            "VK_LCONTROL"
+                        ]
+                    },
+                    "to": [
+                        {
+                            "key": "VK_TAB",
+                            "modifiers": [
+                                "VK_LCONTROL"
+                            ],
+                            "type": "keys"
+                        }
+                    ]
+                },
+                {
+                    "conditions": [
+                        {
+                            "description": "firefox",
+                            "type": "focused_applicatnextion"
+                        }
+                    ],
+                    "description": "tab previous",
+                    "from": {
+                        "key": "h",
+                        "modifiers": [
+                            "VK_LALT",
+                            "VK_LCONTROL"
+                        ]
+                    },
+                    "to": [
+                        {
+                            "key": "VK_TAB",
+                            "modifiers": [
+                                "VK_LCONTROL",
+                                "VK_LSHIFT"
+                            ],
+                            "type": "keys"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

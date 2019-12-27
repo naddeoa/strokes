@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Strokes", "ConsoleApplication1\Strokes.fsproj", "{B3B59254-C1FA-41AB-BEF4-7ACF3293B600}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{32C0B4A0-3799-4CDF-81C7-3C291F16730D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "StrokesInstaller", "Setup1\Setup1.vdproj", "{61B83CDA-56B3-4B79-98D5-A5B1AB85B534}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3B59254-C1FA-41AB-BEF4-7ACF3293B600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B59254-C1FA-41AB-BEF4-7ACF3293B600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B59254-C1FA-41AB-BEF4-7ACF3293B600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B59254-C1FA-41AB-BEF4-7ACF3293B600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B83CDA-56B3-4B79-98D5-A5B1AB85B534}.Debug|Any CPU.ActiveCfg = Debug
+		{61B83CDA-56B3-4B79-98D5-A5B1AB85B534}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CED16086-ED44-4D6F-9925-BB4AFBE929B7}
+	EndGlobalSection
+EndGlobal
