@@ -102,7 +102,7 @@ let getConfigPath =
     homePath +/ ".strokes.json"
 
 // TODO what value should I actually use here? Do I need to have a sample deployed with the app?
-type ConfigProvider = JsonProvider<"../prototype-config.json">
+type ConfigProvider = JsonProvider<"../.strokes.json">
 type Config = ConfigProvider.Root
 type Rule = ConfigProvider.Rule
 type Manipulator = ConfigProvider.Manipulator

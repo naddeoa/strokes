@@ -7,6 +7,13 @@ I made this because I can't see any good Windows solutions for doing these thing
 
 This is in the bare minimal state to be useful. Finding out how to send and receive keys was hard enough that I assumed it alone was keeping most people from actually creating this tool. My hope is that people will jump in to flesh it out. I've gotten it to the point where I can just use it for my own needs so I may not make it much fancier than this.
 
+
+## Installation
+
+Copy the sample `.strokes.json` file to your home directory (the dir that contains Documents, Videos, etc.) and [install Strokes][sample-installer]. You can launch it by searching for Strokes.
+
+There isn't much to see at the moment. It just pops up an empty window and a console that prints out some debugging information, but basic keybinds are working.
+
 ## Philosophy 
 
 There are a few things that should always be true about this application (until someone tells me why I'm wrong).
@@ -51,3 +58,4 @@ This is my first Windows anything and I did everything through Windows GUIs. Wha
 [correct-native-api-model]: https://github.com/michaelnoonan/inputsimulator/blob/master/WindowsInput/Native/KEYBDINPUT.cs#L13
 [ApplicationFrameHost-issue]: https://github.com/ActivityWatch/activitywatch/issues/182
 [nuget-package-manager]: https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio
+[sample-installer]: https://github.com/naddeoa/strokes/releases/download/sample/StrokesInstaller.msi
