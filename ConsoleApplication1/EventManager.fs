@@ -97,11 +97,11 @@ let manipulatorToHandler (manipulator: Manipulator) =
                         match convertStringKeysToCode manipulator.From.Modifiers with
                         | Some(keyCodes) ->
                             // All of the manipulator's modifiers are recognized
-                            let requiredModifiers = Set.ofArray keyCodes
-                            let contained = (event.currentlyPressedKeys
-                                |> List.map (fun key -> Set.contains key requiredModifiers))
+                            let requiredModifiers = Set.ofList event.currentlyPressedKeys
+                            let contained = (keyCodes
+                                |> Array.map (fun key -> Set.contains key requiredModifiers))
                             
-                            let allModifiersMet = not (List.isEmpty contained) && List.forall (fun result -> result = true) contained
+                            let allModifiersMet = not (Array.isEmpty contained) && Array.forall (fun result -> result = true) contained
                             if allModifiersMet then
                                 printfn "Found handler for %s + %A" manipulator.From.Key manipulator.From.Modifiers
                                 manipulator.To
