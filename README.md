@@ -7,14 +7,13 @@ I made this because I can't see any good Windows solutions for doing these thing
 
 This is in the bare minimal state to be useful. Finding out how to send and receive keys was hard enough that I assumed it alone was keeping most people from actually creating this tool. My hope is that people will jump in to flesh it out. I've gotten it to the point where I can just use it for my own needs so I may not make it much fancier than this.
 
-
 ## Installation
 
 Copy the sample `.strokes.json` file to your home directory (the dir that contains Documents, Videos, etc.) and [install Strokes][sample-installer]. You can launch it by searching for Strokes.
 
 There isn't much to see at the moment. It just pops up an empty window and a console that prints out some debugging information, but basic keybinds are working.
 
-## Philosophy 
+## Philosophy
 
 There are a few things that should always be true about this application (until someone tells me why I'm wrong).
 
@@ -27,35 +26,31 @@ I'm not a Windows user. I only use Windows to game and occasionally program/stre
 
 Consequently, I don't know a lot of the best practices or standard anythigns for Windows. I don't know if I created the installer correctly and I don't know what APIs people should or shouldn't be using. I welcome all feedback in this area.
 
-# Questions
-- There are a lot of ways I can imagine mapping structs/records to the native API. I've already used a union and a mutable struct to model the native API. Are there any signifcant differences?
-- Who made the nuget PM? Is that a Micrsoft thing?
-- The FSharp.Data JSON stuff looks really cool. Is that compile time safety?
+# Contributing
+Here are some outstanding things that need doing. This definitely isn't an exhaustive list.
 
-## F# Observations
-- No separate type annotations for functions like Haskell
-- Pretty laxed about side effects. Explicitly mutable variables. Made things easier here if not less safe.
-
-# Open Problems
-- Add support for other kinds of events. For example, in Karabiner, you can set delays and different actions based on whether a key was pressed in combination or alone. 
+- Add support for other kinds of events. For example, in Karabiner, you can set delays and different actions based on whether a key was pressed in combination or alone.
 - Add a GUI to generate the configuartion file and find out how config files work on Windows. I just stuck it in the home dir like I would have on a Unix OS.
 - Add an icon for the package.
 - Finish implementing conditional keybinds. I've got the ability to tell the name of the foreground application already. It looks like it may only work for some windows applications though, and I'm not actually respecting conditional anything when executing key strokes.
 - Make failures far more resillient.
 
-# Development
+There are some [docs on the wiki][wiki_docs] that should explain the design and how the code
+is structured. Hopefully it's enough to get started.
+
 This is my first Windows anything and I did everything through Windows GUIs. What works for me is checking the project out with git, opening the .sln file using Visual Studio, and hitting Start. I'm not sure what state I have on my machine. If something goes wrong then it's probably FSharp.Data missing, which means you'll have to use nuget to install that.
 
-# Dependencies
+## Dependencies
 - FSharp.Data for JSON parsing, installed through nuget
 
 [global-key-listener]: https://stackoverflow.com/questions/17579658/how-to-intercept-all-the-keyboard-events-and-prevent-losing-focus-in-a-winforms
 [keycodes]: https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 [sendinput-ffi-tips]: https://stackoverflow.com/questions/12761169/send-keys-through-sendinput-in-user32-dll
 [consume-keys]: https://www.codeproject.com/Articles/14485/Low-level-Windows-API-hooks-from-C-to-stop-unwante
-[scancodes-over-vks]: https://stackoverflow.com/questions/49224390/c-sendinput-doesnt-manage-alt-codes-properly 
+[scancodes-over-vks]: https://stackoverflow.com/questions/49224390/c-sendinput-doesnt-manage-alt-codes-properly
 [scancodes-demystified]: http://www.quadibloc.com/comp/scan.htm
 [correct-native-api-model]: https://github.com/michaelnoonan/inputsimulator/blob/master/WindowsInput/Native/KEYBDINPUT.cs#L13
 [ApplicationFrameHost-issue]: https://github.com/ActivityWatch/activitywatch/issues/182
 [nuget-package-manager]: https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio
 [sample-installer]: https://github.com/naddeoa/strokes/releases/download/sample/StrokesInstaller.msi
+[wiki_docs]: https://github.com/naddeoa/strokes/wiki
