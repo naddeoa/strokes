@@ -159,6 +159,11 @@ let handleAction (action: EventAction) =
 
         for modifier in modifiers do
             releaseKey modifier
+
+        // Re-press whatever was pressed before
+        for pressedModifier in pressedModifiers do
+            pressKey pressedModifier
+
         true
 
 
