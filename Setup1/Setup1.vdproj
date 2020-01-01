@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_521A73A8F7F443DD91DFBD03AF094524"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5515C46158EC4CF9BF960FCBA7E3F4B0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -321,6 +327,26 @@
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_143F7F1096314FE4A4F3CDC26CC9E7A8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_521A73A8F7F443DD91DFBD03AF094524"
+            {
+            "SourcePath" = "8:..\\ConsoleApplication1\\Resources\\icon.ico"
+            "TargetName" = "8:icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_837FFD44C42F4A2C93EF1A55724D6306"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -688,6 +714,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_837FFD44C42F4A2C93EF1A55724D6306"
+                    {
+                    "Name" = "8:Resources"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_96AAE50F659D4A649A8DA84B7C9DFF38"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_91E496EC09CD439F8A11D39A3E6B2334"
@@ -729,7 +766,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Strokes"
         "ProductCode" = "8:{79B8153B-3406-4700-BD6E-2C92566F6C50}"
-        "PackageCode" = "8:{173C6D96-CD55-415B-AB1F-2A963E7A82C1}"
+        "PackageCode" = "8:{3671D6E4-EE34-4B6C-B163-15C7871BAB6A}"
         "UpgradeCode" = "8:{F5634040-57F7-4AB6-A4B4-A0B98392EE70}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
