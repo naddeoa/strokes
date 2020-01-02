@@ -7,7 +7,7 @@ open System.ComponentModel
 open EventManager
 open ConfigurationFormat
 open System.Drawing
-
+open System.Diagnostics
 
 type StrokesApplicationContext() = 
     inherit ApplicationContext()

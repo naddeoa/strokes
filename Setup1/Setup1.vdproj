@@ -727,6 +727,17 @@
                     }
                 }
             }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_41DC6FB919B744A2BF8F366099839E5F"
+            {
+            "Name" = "8:#1928"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:StartupFolder"
+                "Folders"
+                {
+                }
+            }
             "{1525181F-901A-416C-8A58-119130FE478E}:_91E496EC09CD439F8A11D39A3E6B2334"
             {
             "Name" = "8:#1919"
@@ -766,7 +777,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Strokes"
         "ProductCode" = "8:{79B8153B-3406-4700-BD6E-2C92566F6C50}"
-        "PackageCode" = "8:{3671D6E4-EE34-4B6C-B163-15C7871BAB6A}"
+        "PackageCode" = "8:{7DCBD24D-1830-49EF-879D-7931B92D19E6}"
         "UpgradeCode" = "8:{F5634040-57F7-4AB6-A4B4-A0B98392EE70}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -898,6 +909,20 @@
             "Folder" = "8:_91E496EC09CD439F8A11D39A3E6B2334"
             "WorkingFolder" = "8:_143F7F1096314FE4A4F3CDC26CC9E7A8"
             "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6B03749D4B4844C59DA5395A4E822DE6"
+            {
+            "Name" = "8:Strokes.exe"
+            "Arguments" = "8:"
+            "Description" = "8:Strokes Keybinder"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_520979ACAA7C4B3D8E39C393A4DE9CA7"
+            "Folder" = "8:_41DC6FB919B744A2BF8F366099839E5F"
+            "WorkingFolder" = "8:_143F7F1096314FE4A4F3CDC26CC9E7A8"
+            "Icon" = "8:_521A73A8F7F443DD91DFBD03AF094524"
             "Feature" = "8:"
             }
         }
