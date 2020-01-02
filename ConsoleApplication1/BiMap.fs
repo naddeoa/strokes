@@ -26,10 +26,10 @@ module BiMap =
             | None -> bimap
 
     let mappings (bimap: BiMap<'K, 'V>) =
-        match bimap with
-        | BiMap(map, reverseMap) -> map 
+        let (BiMap (map, reverseMap)) = bimap
+        map
 
     let reverseMappings (bimap: BiMap<'K, 'V>) =
-        match bimap with
-        | BiMap(map, reverseMap) -> reverseMap
+        let (BiMap (map, reverseMap)) = bimap
+        reverseMap
 

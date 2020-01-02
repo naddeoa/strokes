@@ -54,3 +54,7 @@ This is my first Windows anything and I did everything through Windows GUIs. Wha
 [nuget-package-manager]: https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio
 [sample-installer]: https://github.com/naddeoa/strokes/releases/download/sample/StrokesInstaller.msi
 [wiki_docs]: https://github.com/naddeoa/strokes/wiki
+
+## Credit
+- icon: https://icon-icons.com/icon/keyboard/40980
+

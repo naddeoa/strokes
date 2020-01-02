@@ -2,20 +2,20 @@
 
 open API
 open NativeBindings.Hooks
-open System
 open ConfigurationFormat
 open NativeBindings.SendInputBindings
 open NativeBindings.Keys
 open System.Threading
+open System
 
 // The EventManager is responsible for keeping track of state about key presses
 // and mapping events from Windows to the higher level evnts that are used in this program.
 
 type private State = {
     keyState: LowLevelKeyState;
-    // timesatmp: epoch?
 }
 
+// TODO make another one of these that is always passive but gets metadata about how the key press was handled
 type EventAction =
     | ToKeyPress of int * list<int> * list<int>
     | NoAction
@@ -25,11 +25,6 @@ type EventHandler = {
     toAction: Event -> list<EventAction>;
 }
 
-let dummyHandler: EventHandler = {
-    toAction = fun event -> [NoAction]
-}
-
-
 let private getPressedKeys dict =
     Map.toList dict
         |> List.filter (fun (keyCode, state) -> state.keyState = KeyPress)
@@ -37,7 +32,7 @@ let private getPressedKeys dict =
 
 let mutable private keyState: Map<int, State> = Map.empty
 
-let mutable private handlers : list<EventHandler> = [dummyHandler]
+let mutable private handlers : list<EventHandler> = []
 
 let setHandlers newHandlers =
     handlers <- newHandlers
@@ -194,4 +189,9 @@ let setupLLEventHandler (config: Config) =
             |> Array.map manipulatorToHandler
             |> List.ofArray
     setupKeyListener llEventHandler
-    
+  
+let addHandler handler =
+    handlers <- List.append [handler] handlers
+
+let removeHandler handler =
+    handlers <- List.filter (fun it -> not <| LanguagePrimitives.PhysicalEquality it handler) handlers

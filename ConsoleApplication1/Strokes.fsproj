@@ -53,6 +53,8 @@
     <Compile Include="ConfigurationFormat.fs" />
     <Compile Include="API.fs" />
     <Compile Include="EventManager.fs" />
+    <Compile Include="UI\EventViewerForm.fs" />
+    <Compile Include="UI\TrayIcon.fs" />
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
