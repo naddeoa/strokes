@@ -45,6 +45,7 @@
   </PropertyGroup>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
+    <Compile Include="BiMap.fs" />
     <Compile Include="NativeBindings\SendInputBindings.fs" />
     <Compile Include="NativeBindings\Hooks.fs" />
     <Compile Include="NativeBindings\WindowManagement.fs" />

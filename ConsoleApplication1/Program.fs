@@ -34,11 +34,11 @@ type StrokesApplicationContext() =
 let main argv = 
     setupLLEventHandler <| getConfig getConfigPath
 
-    let context = new StrokesApplicationContext()
-
     //let form = new Form()
     //form.Text <- "Strokes"
     //form.ShowInTaskbar <- true
+    //Application.Run(form)
 
+    let context = new StrokesApplicationContext()
     Application.Run(context)
     0 

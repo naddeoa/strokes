@@ -1,183 +1,187 @@
 ﻿module NativeBindings.Keys
 
-// Taken from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
-let convertStringKeyToCode (keyString: string) =
-    match keyString with
-    | "VK_LBUTTON" -> Some 0x01
-    | "VK_RBUTTON" -> Some 0x02
-    | "VK_CANCEL" -> Some 0x03
-    | "VK_MBUTTON" -> Some 0x04
-    | "VK_XBUTTON1" -> Some 0x05
-    | "VK_XBUTTON2" -> Some 0x06
-    | "VK_BACK" -> Some 0x08
-    | "VK_TAB" -> Some 0x09
-    | "VK_CLEAR" -> Some 0x0C
-    | "VK_RETURN" -> Some 0x0D
-    | "VK_SHIFT" -> Some 0x10
-    | "VK_CONTROL" -> Some 0x11
-    | "VK_MENU" -> Some 0x12
-    | "VK_PAUSE" -> Some 0x13
-    | "VK_CAPITAL" -> Some 0x14
-    | "VK_KANA" -> Some 0x15
-    | "VK_HANGUEL" -> Some 0x15
-    | "VK_HANGUL" -> Some 0x15
-    | "VK_JUNJA" -> Some 0x17
-    | "VK_FINAL" -> Some 0x18
-    | "VK_HANJA" -> Some 0x19
-    | "VK_KANJI" -> Some 0x19
-    | "VK_ESCAPE" -> Some 0x1B
-    | "VK_CONVERT" -> Some 0x1C
-    | "VK_NONCONVERT" -> Some 0x1D
-    | "VK_ACCEPT" -> Some 0x1E
-    | "VK_MODECHANGE" -> Some 0x1F
-    | "VK_SPACE" -> Some 0x20
-    | "VK_PRIOR" -> Some 0x21
-    | "VK_NEXT" -> Some 0x22
-    | "VK_END" -> Some 0x23
-    | "VK_HOME" -> Some 0x24
-    | "VK_LEFT" -> Some 0x25
-    | "VK_UP" -> Some 0x26
-    | "VK_RIGHT" -> Some 0x27
-    | "VK_DOWN" -> Some 0x28
-    | "VK_SELECT" -> Some 0x29
-    | "VK_PRINT" -> Some 0x2A
-    | "VK_EXECUTE" -> Some 0x2B
-    | "VK_SNAPSHOT" -> Some 0x2C
-    | "VK_INSERT" -> Some 0x2D
-    | "VK_DELETE" -> Some 0x2E
-    | "VK_HELP" -> Some 0x2F
-    | "0" -> Some 0x30
-    | "1" -> Some 0x31
-    | "2" -> Some 0x32
-    | "3" -> Some 0x33
-    | "4" -> Some 0x34
-    | "5" -> Some 0x35
-    | "6" -> Some 0x36
-    | "7" -> Some 0x37
-    | "8" -> Some 0x38
-    | "9" -> Some 0x39
-    | "a" -> Some 0x41
-    | "b" -> Some 0x42
-    | "c" -> Some 0x43
-    | "d" -> Some 0x44
-    | "e" -> Some 0x45
-    | "f" -> Some 0x46
-    | "g" -> Some 0x47
-    | "h" -> Some 0x48
-    | "i" -> Some 0x49
-    | "j" -> Some 0x4A
-    | "k" -> Some 0x4B
-    | "l" -> Some 0x4C
-    | "m" -> Some 0x4D
-    | "n" -> Some 0x4E
-    | "o" -> Some 0x4F
-    | "p" -> Some 0x50
-    | "q" -> Some 0x51
-    | "r" -> Some 0x52
-    | "s" -> Some 0x53
-    | "t" -> Some 0x54
-    | "u" -> Some 0x55
-    | "v" -> Some 0x56
-    | "w" -> Some 0x57
-    | "x" -> Some 0x58
-    | "y" -> Some 0x59
-    | "z" -> Some 0x5A
-    | "VK_LWIN" -> Some 0x5B
-    | "VK_RWIN" -> Some 0x5C
-    | "VK_APPS" -> Some 0x5D
-    | "VK_SLEEP" -> Some 0x5F
-    | "VK_NUMPAD0" -> Some 0x60
-    | "VK_NUMPAD1" -> Some 0x61
-    | "VK_NUMPAD2" -> Some 0x62
-    | "VK_NUMPAD3" -> Some 0x63
-    | "VK_NUMPAD4" -> Some 0x64
-    | "VK_NUMPAD5" -> Some 0x65
-    | "VK_NUMPAD6" -> Some 0x66
-    | "VK_NUMPAD7" -> Some 0x67
-    | "VK_NUMPAD8" -> Some 0x68
-    | "VK_NUMPAD9" -> Some 0x69
-    | "VK_MULTIPLY" -> Some 0x6A
-    | "VK_ADD" -> Some 0x6B
-    | "VK_SEPARATOR" -> Some 0x6C
-    | "VK_SUBTRACT" -> Some 0x6D
-    | "VK_DECIMAL" -> Some 0x6E
-    | "VK_DIVIDE" -> Some 0x6F
-    | "VK_F1" -> Some 0x70
-    | "VK_F2" -> Some 0x71
-    | "VK_F3" -> Some 0x72
-    | "VK_F4" -> Some 0x73
-    | "VK_F5" -> Some 0x74
-    | "VK_F6" -> Some 0x75
-    | "VK_F7" -> Some 0x76
-    | "VK_F8" -> Some 0x77
-    | "VK_F9" -> Some 0x78
-    | "VK_F10" -> Some 0x79
-    | "VK_F11" -> Some 0x7A
-    | "VK_F12" -> Some 0x7B
-    | "VK_F13" -> Some 0x7C
-    | "VK_F14" -> Some 0x7D
-    | "VK_F15" -> Some 0x7E
-    | "VK_F16" -> Some 0x7F
-    | "VK_F17" -> Some 0x80
-    | "VK_F18" -> Some 0x81
-    | "VK_F19" -> Some 0x82
-    | "VK_F20" -> Some 0x83
-    | "VK_F21" -> Some 0x84
-    | "VK_F22" -> Some 0x85
-    | "VK_F23" -> Some 0x86
-    | "VK_F24" -> Some 0x87
-    | "VK_NUMLOCK" -> Some 0x90
-    | "VK_SCROLL" -> Some 0x91
-    | "VK_LSHIFT" -> Some 0xA0
-    | "VK_RSHIFT" -> Some 0xA1
-    | "VK_LCONTROL" -> Some 0xA2
-    | "VK_RCONTROL" -> Some 0xA3
-    | "VK_LMENU" -> Some 0xA4
-    | "VK_RMENU" -> Some 0xA5
-    | "VK_LALT" -> Some 0xA4 // LALT/RALT are actually LMENU/RMENU, but those are silly names
-    | "VK_RALT" -> Some 0xA5
-    | "VK_BROWSER_BACK" -> Some 0xA6
-    | "VK_BROWSER_FORWARD" -> Some 0xA7
-    | "VK_BROWSER_REFRESH" -> Some 0xA8
-    | "VK_BROWSER_STOP" -> Some 0xA9
-    | "VK_BROWSER_SEARCH" -> Some 0xAA
-    | "VK_BROWSER_FAVORITES" -> Some 0xAB
-    | "VK_BROWSER_HOME" -> Some 0xAC
-    | "VK_VOLUME_MUTE" -> Some 0xAD
-    | "VK_VOLUME_DOWN" -> Some 0xAE
-    | "VK_VOLUME_UP" -> Some 0xAF
-    | "VK_MEDIA_NEXT_TRACK" -> Some 0xB0
-    | "VK_MEDIA_PREV_TRACK" -> Some 0xB1
-    | "VK_MEDIA_STOP" -> Some 0xB2
-    | "VK_MEDIA_PLAY_PAUSE" -> Some 0xB3
-    | "VK_LAUNCH_MAIL" -> Some 0xB4
-    | "VK_LAUNCH_MEDIA_SELECT" -> Some 0xB5
-    | "VK_LAUNCH_APP1" -> Some 0xB6
-    | "VK_LAUNCH_APP2" -> Some 0xB7
-    | "VK_OEM_1" -> Some 0xBA
-    | "VK_OEM_PLUS" -> Some 0xBB
-    | "VK_OEM_COMMA" -> Some 0xBC
-    | "VK_OEM_MINUS" -> Some 0xBD
-    | "VK_OEM_PERIOD" -> Some 0xBE
-    | "VK_OEM_2" -> Some 0xBF
-    | "VK_OEM_3" -> Some 0xC0
-    | "VK_OEM_4" -> Some 0xDB
-    | "VK_OEM_5" -> Some 0xDC
-    | "VK_OEM_6" -> Some 0xDD
-    | "VK_OEM_7" -> Some 0xDE
-    | "VK_OEM_8" -> Some 0xDF
-    | "VK_OEM_102" -> Some 0xE2
-    | "VK_PROCESSKEY" -> Some 0xE5
-    | "VK_PACKET" -> Some 0xE7
-    | "VK_ATTN" -> Some 0xF6
-    | "VK_CRSEL" -> Some 0xF7
-    | "VK_EXSEL" -> Some 0xF8
-    | "VK_EREOF" -> Some 0xF9
-    | "VK_PLAY" -> Some 0xFA
-    | "VK_ZOOM" -> Some 0xFB
-    | "VK_NONAME" -> Some 0xFC
-    | "VK_PA1" -> Some 0xFD
-    | "VK_OEM_CLEAR" -> Some 0xFE
-    | _ -> None
+open BiMap
 
+// Taken from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+let private keyCodes = 
+    BiMap.empty
+        |> BiMap.add "VK_LBUTTON" 0x01
+        |> BiMap.add "VK_RBUTTON" 0x02
+        |> BiMap.add "VK_CANCEL" 0x03
+        |> BiMap.add "VK_MBUTTON" 0x04
+        |> BiMap.add "VK_XBUTTON1" 0x05
+        |> BiMap.add "VK_XBUTTON2" 0x06
+        |> BiMap.add "VK_BACK" 0x08
+        |> BiMap.add "VK_TAB" 0x09
+        |> BiMap.add "VK_CLEAR" 0x0C
+        |> BiMap.add "VK_RETURN" 0x0D
+        |> BiMap.add "VK_SHIFT" 0x10
+        |> BiMap.add "VK_CONTROL" 0x11
+        |> BiMap.add "VK_MENU" 0x12
+        |> BiMap.add "VK_PAUSE" 0x13
+        |> BiMap.add "VK_CAPITAL" 0x14
+        |> BiMap.add "VK_KANA" 0x15
+        |> BiMap.add "VK_HANGUEL" 0x15
+        |> BiMap.add "VK_HANGUL" 0x15
+        |> BiMap.add "VK_JUNJA" 0x17
+        |> BiMap.add "VK_FINAL" 0x18
+        |> BiMap.add "VK_HANJA" 0x19
+        |> BiMap.add "VK_KANJI" 0x19
+        |> BiMap.add "VK_ESCAPE" 0x1B
+        |> BiMap.add "VK_CONVERT" 0x1C
+        |> BiMap.add "VK_NONCONVERT" 0x1D
+        |> BiMap.add "VK_ACCEPT" 0x1E
+        |> BiMap.add "VK_MODECHANGE" 0x1F
+        |> BiMap.add "VK_SPACE" 0x20
+        |> BiMap.add "VK_PRIOR" 0x21
+        |> BiMap.add "VK_NEXT" 0x22
+        |> BiMap.add "VK_END" 0x23
+        |> BiMap.add "VK_HOME" 0x24
+        |> BiMap.add "VK_LEFT" 0x25
+        |> BiMap.add "VK_UP" 0x26
+        |> BiMap.add "VK_RIGHT" 0x27
+        |> BiMap.add "VK_DOWN" 0x28
+        |> BiMap.add "VK_SELECT" 0x29
+        |> BiMap.add "VK_PRINT" 0x2A
+        |> BiMap.add "VK_EXECUTE" 0x2B
+        |> BiMap.add "VK_SNAPSHOT" 0x2C
+        |> BiMap.add "VK_INSERT" 0x2D
+        |> BiMap.add "VK_DELETE" 0x2E
+        |> BiMap.add "VK_HELP" 0x2F
+        |> BiMap.add "0" 0x30
+        |> BiMap.add "1" 0x31
+        |> BiMap.add "2" 0x32
+        |> BiMap.add "3" 0x33
+        |> BiMap.add "4" 0x34
+        |> BiMap.add "5" 0x35
+        |> BiMap.add "6" 0x36
+        |> BiMap.add "7" 0x37
+        |> BiMap.add "8" 0x38
+        |> BiMap.add "9" 0x39
+        |> BiMap.add "a" 0x41
+        |> BiMap.add "b" 0x42
+        |> BiMap.add "c" 0x43
+        |> BiMap.add "d" 0x44
+        |> BiMap.add "e" 0x45
+        |> BiMap.add "f" 0x46
+        |> BiMap.add "g" 0x47
+        |> BiMap.add "h" 0x48
+        |> BiMap.add "i" 0x49
+        |> BiMap.add "j" 0x4A
+        |> BiMap.add "k" 0x4B
+        |> BiMap.add "l" 0x4C
+        |> BiMap.add "m" 0x4D
+        |> BiMap.add "n" 0x4E
+        |> BiMap.add "o" 0x4F
+        |> BiMap.add "p" 0x50
+        |> BiMap.add "q" 0x51
+        |> BiMap.add "r" 0x52
+        |> BiMap.add "s" 0x53
+        |> BiMap.add "t" 0x54
+        |> BiMap.add "u" 0x55
+        |> BiMap.add "v" 0x56
+        |> BiMap.add "w" 0x57
+        |> BiMap.add "x" 0x58
+        |> BiMap.add "y" 0x59
+        |> BiMap.add "z" 0x5A
+        |> BiMap.add "VK_LWIN" 0x5B
+        |> BiMap.add "VK_RWIN" 0x5C
+        |> BiMap.add "VK_APPS" 0x5D
+        |> BiMap.add "VK_SLEEP" 0x5F
+        |> BiMap.add "VK_NUMPAD0" 0x60
+        |> BiMap.add "VK_NUMPAD1" 0x61
+        |> BiMap.add "VK_NUMPAD2" 0x62
+        |> BiMap.add "VK_NUMPAD3" 0x63
+        |> BiMap.add "VK_NUMPAD4" 0x64
+        |> BiMap.add "VK_NUMPAD5" 0x65
+        |> BiMap.add "VK_NUMPAD6" 0x66
+        |> BiMap.add "VK_NUMPAD7" 0x67
+        |> BiMap.add "VK_NUMPAD8" 0x68
+        |> BiMap.add "VK_NUMPAD9" 0x69
+        |> BiMap.add "VK_MULTIPLY" 0x6A
+        |> BiMap.add "VK_ADD" 0x6B
+        |> BiMap.add "VK_SEPARATOR" 0x6C
+        |> BiMap.add "VK_SUBTRACT" 0x6D
+        |> BiMap.add "VK_DECIMAL" 0x6E
+        |> BiMap.add "VK_DIVIDE" 0x6F
+        |> BiMap.add "VK_F1" 0x70
+        |> BiMap.add "VK_F2" 0x71
+        |> BiMap.add "VK_F3" 0x72
+        |> BiMap.add "VK_F4" 0x73
+        |> BiMap.add "VK_F5" 0x74
+        |> BiMap.add "VK_F6" 0x75
+        |> BiMap.add "VK_F7" 0x76
+        |> BiMap.add "VK_F8" 0x77
+        |> BiMap.add "VK_F9" 0x78
+        |> BiMap.add "VK_F10" 0x79
+        |> BiMap.add "VK_F11" 0x7A
+        |> BiMap.add "VK_F12" 0x7B
+        |> BiMap.add "VK_F13" 0x7C
+        |> BiMap.add "VK_F14" 0x7D
+        |> BiMap.add "VK_F15" 0x7E
+        |> BiMap.add "VK_F16" 0x7F
+        |> BiMap.add "VK_F17" 0x80
+        |> BiMap.add "VK_F18" 0x81
+        |> BiMap.add "VK_F19" 0x82
+        |> BiMap.add "VK_F20" 0x83
+        |> BiMap.add "VK_F21" 0x84
+        |> BiMap.add "VK_F22" 0x85
+        |> BiMap.add "VK_F23" 0x86
+        |> BiMap.add "VK_F24" 0x87
+        |> BiMap.add "VK_NUMLOCK" 0x90
+        |> BiMap.add "VK_SCROLL" 0x91
+        |> BiMap.add "VK_LSHIFT" 0xA0
+        |> BiMap.add "VK_RSHIFT" 0xA1
+        |> BiMap.add "VK_LCONTROL" 0xA2
+        |> BiMap.add "VK_RCONTROL" 0xA3
+        |> BiMap.add "VK_LMENU" 0xA4
+        |> BiMap.add "VK_RMENU" 0xA5
+        |> BiMap.add "VK_LALT" 0xA4 // LALT/RALT are actually LMENU/RMENU, but those are silly names
+        |> BiMap.add "VK_RALT" 0xA5
+        |> BiMap.add "VK_BROWSER_BACK" 0xA6
+        |> BiMap.add "VK_BROWSER_FORWARD" 0xA7
+        |> BiMap.add "VK_BROWSER_REFRESH" 0xA8
+        |> BiMap.add "VK_BROWSER_STOP" 0xA9
+        |> BiMap.add "VK_BROWSER_SEARCH" 0xAA
+        |> BiMap.add "VK_BROWSER_FAVORITES" 0xAB
+        |> BiMap.add "VK_BROWSER_HOME" 0xAC
+        |> BiMap.add "VK_VOLUME_MUTE" 0xAD
+        |> BiMap.add "VK_VOLUME_DOWN" 0xAE
+        |> BiMap.add "VK_VOLUME_UP" 0xAF
+        |> BiMap.add "VK_MEDIA_NEXT_TRACK" 0xB0
+        |> BiMap.add "VK_MEDIA_PREV_TRACK" 0xB1
+        |> BiMap.add "VK_MEDIA_STOP" 0xB2
+        |> BiMap.add "VK_MEDIA_PLAY_PAUSE" 0xB3
+        |> BiMap.add "VK_LAUNCH_MAIL" 0xB4
+        |> BiMap.add "VK_LAUNCH_MEDIA_SELECT" 0xB5
+        |> BiMap.add "VK_LAUNCH_APP1" 0xB6
+        |> BiMap.add "VK_LAUNCH_APP2" 0xB7
+        |> BiMap.add "VK_OEM_1" 0xBA
+        |> BiMap.add "VK_OEM_PLUS" 0xBB
+        |> BiMap.add "VK_OEM_COMMA" 0xBC
+        |> BiMap.add "VK_OEM_MINUS" 0xBD
+        |> BiMap.add "VK_OEM_PERIOD" 0xBE
+        |> BiMap.add "VK_OEM_2" 0xBF
+        |> BiMap.add "VK_OEM_3" 0xC0
+        |> BiMap.add "VK_OEM_4" 0xDB
+        |> BiMap.add "VK_OEM_5" 0xDC
+        |> BiMap.add "VK_OEM_6" 0xDD
+        |> BiMap.add "VK_OEM_7" 0xDE
+        |> BiMap.add "VK_OEM_8" 0xDF
+        |> BiMap.add "VK_OEM_102" 0xE2
+        |> BiMap.add "VK_PROCESSKEY" 0xE5
+        |> BiMap.add "VK_PACKET" 0xE7
+        |> BiMap.add "VK_ATTN" 0xF6
+        |> BiMap.add "VK_CRSEL" 0xF7
+        |> BiMap.add "VK_EXSEL" 0xF8
+        |> BiMap.add "VK_EREOF" 0xF9
+        |> BiMap.add "VK_PLAY" 0xFA
+        |> BiMap.add "VK_ZOOM" 0xFB
+        |> BiMap.add "VK_NONAME" 0xFC
+        |> BiMap.add "VK_PA1" 0xFD
+        |> BiMap.add "VK_OEM_CLEAR" 0xFE
+
+let convertStringKeyToCode (keyString: string) = Map.tryFind keyString (BiMap.mappings keyCodes)
+
+let convertCodeToStringKey (code: int) = Map.tryFind code (BiMap.reverseMappings keyCodes)
 
