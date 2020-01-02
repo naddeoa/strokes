@@ -1,9 +1,9 @@
 
 # Strokes Key Mapper - Karabiner-like utility for Windows
 
-Strokes is a Windows application that let's you map keys and key combinations to other keys and key combinations. It's inspired by Karabiner, an OSX application that lets you do the same thing.
+Strokes is a Windows application that lets you map keys and key combinations to other keys and key combinations. It's inspired by Karabiner, an OSX application that lets you do the same thing.
 
-I made this because I can't see any good Windows solutions for doing these things. On OSX, I have Karabiner. On Linux, a I have AutoKey. On Windows, all I have is strange 10 year old applications and registry hacks that only work for single key strokes.
+I made this because I can't find any good Windows solutions for doing these things. On OSX, I have Karabiner. On Linux, a I have AutoKey. On Windows, all I have is strange 10 year old applications and registry hacks that only work for single key presses.
 
 This is in the bare minimal state to be useful. Finding out how to send and receive keys was hard enough that I assumed it alone was keeping most people from actually creating this tool. My hope is that people will jump in to flesh it out. I've gotten it to the point where I can just use it for my own needs so I may not make it much fancier than this.
 
