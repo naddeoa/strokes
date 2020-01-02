@@ -6,6 +6,7 @@ open System
 open ConfigurationFormat
 open NativeBindings.SendInputBindings
 open NativeBindings.Keys
+open System.Threading
 
 // The EventManager is responsible for keeping track of state about key presses
 // and mapping events from Windows to the higher level evnts that are used in this program.
@@ -159,6 +160,13 @@ let handleAction (action: EventAction) =
 
         for modifier in modifiers do
             releaseKey modifier
+
+        // TODO hacky. It looks like repressing the modifier keys right away has some strange side effects. For example,
+        // I have a keybind to switch one desktop to the left. Without this timeout, after switching, the window on that
+        // desktop doesn't have focus when it should. I think this is because that extra key press is going to the currently
+        // focused window which is on the virtual desktop that I'm coming from, and I end up with a race that results in the
+        // window that I can't see retaining focus.
+        Thread.Sleep 100
 
         // Re-press whatever was pressed before
         for pressedModifier in pressedModifiers do
