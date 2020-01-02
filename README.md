@@ -11,7 +11,7 @@ This is in the bare minimal state to be useful. Finding out how to send and rece
 
 Copy the sample `.strokes.json` file to your home directory (the dir that contains Documents, Videos, etc.) and [install Strokes][sample-installer]. You can launch it by searching for Strokes.
 
-There isn't much to see at the moment. It just pops up an empty window and a console that prints out some debugging information, but basic keybinds are working.
+You'll have to edit the `~/.strokes.json` file by hand for now. You can get the names of the keys you press by right clicking the icon in the system tray after you launch it and picking Event Viewer.
 
 ## Philosophy
 
