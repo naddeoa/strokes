@@ -97,7 +97,8 @@ let manipulatorToHandler (manipulator: Manipulator) =
                             let contained = (keyCodes
                                 |> Array.map (fun key -> Set.contains key requiredModifiers))
                             
-                            let allModifiersMet = not (Array.isEmpty contained) && Array.forall (fun result -> result = true) contained
+                            let noModifiersPressed = event.currentlyPressedKeys.Length = 0
+                            let allModifiersMet = ((not (Array.isEmpty contained)) || noModifiersPressed ) && Array.forall (fun result -> result = true) contained
                             if allModifiersMet then
                                 printfn "Found handler for %s + %A" manipulator.From.Key manipulator.From.Modifiers
                                 manipulator.To
